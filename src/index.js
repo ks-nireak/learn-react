@@ -1,17 +1,27 @@
 import React from 'react';
 import { render } from 'react-dom';
-import PokemonBoxes from './PokemonBoxes';
+import 'semantic-ui-css/semantic.min.css';
+import PokemonBox from './containers/PokemonBox';
+import { BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import configureStore from './stores/configureStore'
+import routes from './routes';
 
 const styles = {
   fontFamily: 'sans-serif',
   textAlign: 'center',
+  color: '#FFFFFF'
 };
 
+const store = configureStore()
+
 const App = () => (
-  <div style={styles}>
-    <h2>Code Sandbox Io is awesome!!!</h2>
-    <PokemonBoxes/>
-  </div>
+  routes
 );
 
-render(<App />, document.getElementById('root'));
+render(
+  <Provider store={store}>
+    <App style={styles}/>
+  </Provider>,
+  document.getElementById('root')
+);
