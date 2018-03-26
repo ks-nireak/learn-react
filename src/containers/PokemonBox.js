@@ -4,7 +4,7 @@ import _ from "lodash";
 import { getPokemons } from '../actions/pokemonActions';
 import Pokemon from "../components/Pokemon";
 import { connect } from 'react-redux';
-import { Button, Container, Grid, Segment } from 'semantic-ui-react';
+import { Button, Container, Grid } from 'semantic-ui-react';
 
 class PokemonBox extends React.Component {
   constructor(props) {
@@ -68,7 +68,7 @@ class PokemonBox extends React.Component {
           onClick={this.fetchData}
           style={styles.glowButton}> Click Me !!!
         </Button>
-        <Grid columns={3}>
+        <Grid columns={6}>
           {
             _.map(pokemons, (pokemon, index) => {
               const pokeId = _.isEmpty(pokemon.url) ? pokemon.id : pokemon.url.split('/').reverse()[1]

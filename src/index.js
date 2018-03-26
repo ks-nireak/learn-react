@@ -10,7 +10,7 @@ import routes from './routes';
 const styles = {
   fontFamily: 'sans-serif',
   textAlign: 'center',
-  color: '#FFFFFF'
+  color: '#FFFFFF',
 };
 
 const store = configureStore()
